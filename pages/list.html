@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ListEmployees</title>
+</head>
+<body>
+        <center><h1>List Of Employees</h1></center>
+<a href="/employee/">HOME</a><br><br>
+
+<table border="1">
+
+    <thead>
+    <th>ID</th> <th>Full Name</th> <th>Email</th> <th>Gender</th> <th>DOB</th> <th>Age</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+        {% for emp in result_list %}  <!-- statement or looping Expression -->
+            <tr>
+
+                <td>{{emp.id}}</td>
+                <td>{{emp.f_name}} &nbsp;&nbsp; {{emp.m_name}} &nbsp;&nbsp; {{emp.l_name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.dob}}</td>
+                <td>{{emp.age}}</td>
+                <td>
+                    <a href="/emp/edit/{{emp.id}}">EDIT</a> &nbsp;&nbsp; &nbsp;&nbsp;
+                    <a href="/emp/delete/{{emp.id}}">DELETE</a>
+
+                </td>
+
+            </tr>
+
+        {% endfor %}
+    </tbody>
+
+</table>
+</body>
+</html>
